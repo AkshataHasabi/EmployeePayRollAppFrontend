@@ -1,0 +1,83 @@
+
+<div class="col-md-6 offset-md-3">
+    <h3> Create Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> First Name</label><br>
+            <input type="text" class ="form-control" id = "firstName"
+                [(ngModel)] = "employee.firstName" name = "firstName">
+        </div>
+    
+        <div class="form-group">
+            <label> Last Name</label><br>
+            <input type="text" class ="form-control" id = "lastName"
+                [(ngModel)] = "employee.lastName" name = "lastName">
+        </div>
+        
+        <div class="form-group">
+            <label class="label text" for="gender">Gender</label><br>
+            <div>
+                <input type="radio" id="male" name="gender"  value="Male" [(ngModel)]="employee.gender" required>
+                <label class="text" for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="Female" [(ngModel)]="employee.gender" required>
+                <label class="text" for="female">Female</label><br>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="label text" for="profile">Profile Image</label>
+            <div class="profile-radio-content">
+                <label>
+                    <input type="radio" id="profile1" name="profile"
+                        value="../assets/profile1.jpg" required [(ngModel)]="employee.profilePic">
+                    <img class="profile" id="image1" src="../assets/profile1.jpg">
+                </label>
+                <label>
+                    <input type="radio" id="profile2" name="profile"
+                        value="../assets/profile2.jpg" required [(ngModel)]="employee.profilePic">
+                    <img class="profile" id="image2" src="../assets/profile2.jpg">
+                </label>
+                <label>
+                    <input type="radio" id="profile3" name="profile"
+                        value="../assets/profile3.png" required [(ngModel)]="employee.profilePic">
+                    <img class="profile" id="image3" src="../assets/profile3.png">
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="label text" for="department">Department</label>
+            <div>
+                <input class="checkbox" type="checkbox" id="hr" name="department1" value="HR" (click)="getVal('HR')" [ngModel]="employee.department=='HR'">
+                <label class="text" for="hr">HR</label><br>
+                <input class="checkbox" type="checkbox" id="sales" name="department2" value="Sales" (click)="getVal('Sales')"[ngModel]="employee.department=='Sales'">
+                <label class="text" for="sales">Sales</label><br>
+                <input class="checkbox" type="checkbox" id="finance" name="department3" value="Finance" (click)="getVal('Developer')"[ngModel]="employee.department=='Developer'">
+                <label class="text" for="finance">Developer</label><br>
+                <input class="checkbox" type="checkbox" id="others" name="department4" value="Others" (click)="getVal('Others')"[ngModel]="employee.department=='Others'">
+                <label class="text" for="others">Others</label><br>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="label text" for="salary">Select salary here: </label><br>
+            <input class="input required" type="range" name="salary" id="salary" min="20000" max="780000"
+                step="500" value="45000" [(ngModel)]="employee.salary">
+            <output class="salary-output text" for="salary">300000</output>
+        </div>
+
+        <div class="form-group">
+            <label class="label text" for="notes">Notes</label><br>
+            <textarea id="notes" class="input required" name="Notes" placeholder="Tell About yourself" style="height:50px" [(ngModel)]="employee.notes"></textarea>
+        </div>
+
+        <div class="buttonParent">
+            <button class="resetButton button cancelButton" (click)="onCancle()">Cancel</button><br>
+            <div class="submit-reset">
+                <button type="submit" class="button submitButton" id="submitButton" >Submit</button>
+                <button type="reset" class="resetButton button">Reset</button><br>
+            </div>
+        </div>
+    </form>
+</div>

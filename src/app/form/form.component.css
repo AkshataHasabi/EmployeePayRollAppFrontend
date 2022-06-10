@@ -1,0 +1,15 @@
+.row-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 0px solid green;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.profile {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
