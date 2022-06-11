@@ -1,32 +1,32 @@
 
-<div class="col-md-6 offset-md-3">
-    <h3> Create Employee </h3>
-    <form (ngSubmit) = "onSubmit()">
-    
-        <div class="form-group">
-            <label> First Name</label><br>
+<div class="form-content">
+    <form class ="form" action ="#" (ngSubmit) = "onSubmit()">
+        <h3> Add Employee Details</h3>
+        <div class="row-content">
+            <label class="lable-text" for="firstName"> FirstName</label>
             <input type="text" class ="form-control" id = "firstName"
                 [(ngModel)] = "employee.firstName" name = "firstName">
         </div>
     
-        <div class="form-group">
-            <label> Last Name</label><br>
+        <div class="row-content">
+            <label class="lable-text" for="lastName"> LastName</label>
             <input type="text" class ="form-control" id = "lastName"
                 [(ngModel)] = "employee.lastName" name = "lastName">
         </div>
         
-        <div class="form-group">
-            <label class="label text" for="gender">Gender</label><br>
+        <div class="row-content">
+            <label class="label text" for="gender">Gender</label>
             <div>
-                <input type="radio" id="male" name="gender"  value="Male" [(ngModel)]="employee.gender" required>
-                <label class="text" for="male">Male</label><br>
-                <input type="radio" id="female" name="gender" value="Female" [(ngModel)]="employee.gender" required>
-                <label class="text" for="female">Female</label><br>
+                <input type="radio" id="male" name="gender"  value="male" [(ngModel)]="employee.gender" required>
+                <label class="text" for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" [(ngModel)]="employee.gender" required>
+                <label class="text" for="female">Female</label>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="row-content">
             <label class="label text" for="profile">Profile Image</label>
+
             <div class="profile-radio-content">
                 <label>
                     <input type="radio" id="profile1" name="profile"
@@ -46,30 +46,34 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="row-content">
             <label class="label text" for="department">Department</label>
-            <div>
+            <div class="department-checkbox-content">
                 <input class="checkbox" type="checkbox" id="hr" name="department1" value="HR" (click)="getVal('HR')" [ngModel]="employee.department=='HR'">
-                <label class="text" for="hr">HR</label><br>
+                <label class="text" for="hr">HR</label>
                 <input class="checkbox" type="checkbox" id="sales" name="department2" value="Sales" (click)="getVal('Sales')"[ngModel]="employee.department=='Sales'">
-                <label class="text" for="sales">Sales</label><br>
+                <label class="text" for="sales">Sales</label>
                 <input class="checkbox" type="checkbox" id="finance" name="department3" value="Finance" (click)="getVal('Developer')"[ngModel]="employee.department=='Developer'">
-                <label class="text" for="finance">Developer</label><br>
+                <label class="text" for="finance">Developer</label>
                 <input class="checkbox" type="checkbox" id="others" name="department4" value="Others" (click)="getVal('Others')"[ngModel]="employee.department=='Others'">
-                <label class="text" for="others">Others</label><br>
+                <label class="text" for="others">Others</label>
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="label text" for="salary">Select salary here: </label><br>
-            <input class="input required" type="range" name="salary" id="salary" min="20000" max="780000"
-                step="500" value="45000" [(ngModel)]="employee.salary">
-            <output class="salary-output text" for="salary">300000</output>
+        <div class="row-content">
+            <label class="label text" for="salary">Select salary here: </label>
+            <input class="input" type="range" name="salary" id="salary" min="20000" max="70000"
+                step="100" value="25000" [(ngModel)]="employee.salary">
+            <output class="salary-output text" for="salary">400000</output>
         </div>
 
-        <div class="form-group">
+        <div class="row-content">
+            <label class="label text" for="StartDate">Start Date</label>
+            <input type="date" class="startDate" id="StartDate" name="date" [(ngModel)]="employee.date" required>
+        </div>
+        <div class="row-content">
             <label class="label text" for="notes">Notes</label><br>
-            <textarea id="notes" class="input required" name="Notes" placeholder="Tell About yourself" style="height:50px" [(ngModel)]="employee.notes"></textarea>
+            <textarea id="notes" class="input" name="Notes" placeholder="Tell About yourself" style="height:50px" [(ngModel)]="employee.notes"></textarea>
         </div>
 
         <div class="buttonParent">

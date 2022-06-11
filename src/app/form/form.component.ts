@@ -9,7 +9,7 @@ import { EmployeeModel } from '../EmployeeModel';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  employee: EmployeeModel = new EmployeeModel("","","","",0,"","")
+  employee: EmployeeModel = new EmployeeModel("","","",new Date,"",0,"","")
 
   constructor(private router:Router) { }
 
