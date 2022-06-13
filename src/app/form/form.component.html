@@ -3,19 +3,13 @@
     <form class ="form" action ="#" (ngSubmit) = "onSubmit()">
         <h3> Add Employee Details</h3>
         <div class="row-content">
-            <label class="lable-text" for="firstName"> FirstName</label>
-            <input type="text" class ="form-control" id = "firstName"
-                [(ngModel)] = "employee.firstName" name = "firstName">
+            <label class="lable-text" for="firstName"> fName</label>
+            <input type="text" class ="form-control" id = "firstName" pattern="^[A-Z]{1}[a-zA-Z\\s]{2,}$"
+                [(ngModel)] = "employee.fName" name = "firstName"/>
         </div>
-    
+          
         <div class="row-content">
-            <label class="lable-text" for="lastName"> LastName</label>
-            <input type="text" class ="form-control" id = "lastName"
-                [(ngModel)] = "employee.lastName" name = "lastName">
-        </div>
-        
-        <div class="row-content">
-            <label class="label text" for="gender">Gender</label>
+            <label class="label text" for="gender"> Gender</label>
             <div>
                 <input type="radio" id="male" name="gender"  value="male" [(ngModel)]="employee.gender" required>
                 <label class="text" for="male">Male</label>
@@ -51,11 +45,11 @@
             <div class="department-checkbox-content">
                 <input class="checkbox" type="checkbox" id="hr" name="department1" value="HR" (click)="getVal('HR')" [ngModel]="employee.department=='HR'">
                 <label class="text" for="hr">HR</label>
-                <input class="checkbox" type="checkbox" id="sales" name="department2" value="Sales" (click)="getVal('Sales')"[ngModel]="employee.department=='Sales'">
+                <input class="checkbox" type="checkbox" id="sales" name="department2" value="Sales" (click)="getVal('Sales')" [ngModel]="employee.department=='Sales'">
                 <label class="text" for="sales">Sales</label>
-                <input class="checkbox" type="checkbox" id="finance" name="department3" value="Finance" (click)="getVal('Developer')"[ngModel]="employee.department=='Developer'">
+                <input class="checkbox" type="checkbox" id="finance" name="department3" value="Finance" (click)="getVal('Developer')" [ngModel]="employee.department=='Developer'">
                 <label class="text" for="finance">Developer</label>
-                <input class="checkbox" type="checkbox" id="others" name="department4" value="Others" (click)="getVal('Others')"[ngModel]="employee.department=='Others'">
+                <input class="checkbox" type="checkbox" id="others" name="department4" value="Others" (click)="getVal('Others')" [ngModel]="employee.department=='Others'">
                 <label class="text" for="others">Others</label>
             </div>
         </div>
@@ -69,17 +63,17 @@
 
         <div class="row-content">
             <label class="label text" for="StartDate">Start Date</label>
-            <input type="date" class="startDate" id="StartDate" name="date" [(ngModel)]="employee.date" required>
+            <input type="date" class="startDate" id="StartDate" name="date" [(ngModel)]="employee.startDate" required>
         </div>
         <div class="row-content">
             <label class="label text" for="notes">Notes</label><br>
-            <textarea id="notes" class="input" name="Notes" placeholder="Tell About yourself" style="height:50px" [(ngModel)]="employee.notes"></textarea>
+            <textarea id="notes" class="input" name="Notes" placeholder="Tell About yourself" style="height:50px" [(ngModel)]="employee.note"></textarea>
         </div>
 
         <div class="buttonParent">
             <button class="resetButton button cancelButton" (click)="onCancle()">Cancel</button><br>
             <div class="submit-reset">
-                <button type="submit" class="button submitButton" id="submitButton" >Submit</button>
+                <button type="submit" class="button submitButton" id="submitButton" (click)="onSubmit()">Submit</button>
                 <button type="reset" class="resetButton button">Reset</button><br>
             </div>
         </div>

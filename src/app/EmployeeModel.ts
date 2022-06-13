@@ -1,21 +1,19 @@
 export class EmployeeModel {
 
-    firstName: String;
-    lastName:String;
+    fName: String;
     gender: String;
     department: String;
     salary: number;
-    date: Date;
-    notes: String
+    startDate: Date;
+    note: String
     profilePic: String;
-constructor(firstName: String, lastName:String, gender: String, date: Date,department: String,salary: number, notes: String,profilePic: String){
-    this.firstName=firstName;
-    this.lastName=lastName;
+constructor(fName: String, gender: String, startDate: Date,department: String,salary: number, note: String,profilePic: String){
+    this.fName=fName;
     this.gender=gender;
-    this.date=date;
+    this.startDate=startDate;
     this.department=department;
     this.salary=salary;
-    this.notes=notes;
+    this.note=note;
     this.profilePic=profilePic;
 }
 }

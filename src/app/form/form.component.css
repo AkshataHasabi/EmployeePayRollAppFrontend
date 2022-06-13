@@ -136,3 +136,24 @@ select {
     text-decoration: none;
     text-align: center;
 }
+
+.resetButton {
+    padding: 20px 40px;
+}
+
+.button.submitButton:disabled{
+    opacity: 0.3;
+}
+
+.text-error{
+    
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    white-space: nowrap;
+}
+
+.button:hover {
+    box-shadow: 0px 8px 15px rgba(77, 74, 74, 0.3);
+}

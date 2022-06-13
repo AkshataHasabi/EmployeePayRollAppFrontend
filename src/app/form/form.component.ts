@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeModel } from '../EmployeeModel';
-
+import { EmployeeService } from '../employee-service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  employee: EmployeeModel = new EmployeeModel("","","",new Date,"",0,"","")
+  employee: EmployeeModel = new EmployeeModel("","",new Date,"",0,"","")
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private service:EmployeeService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +21,10 @@ export class FormComponent implements OnInit {
  
   onSubmit() {
     console.log(this.employee);
+     this.service.addEmployees(this.employee).subscribe((data:any)=> 
+    {
+      this.router.navigate(["dashboard"])
+    })
   }
   getVal(value: String) {
     console.log(value);
