@@ -13,15 +13,37 @@
         <tr>
           <!--Table header-->
           <th>id</th>
-          <th>fName</th>
+          <th>name</th>
           <th>gender</th>
-          <th>profilepic</th>
-          <th>Department</th>
+          <th>profilePic</th>
+          <th>department</th>
           <th>salary</th>
           <th>startDate</th>
           <th>note</th>
           <th>Action</th>
          </tr>
-      </table>
+         <tr *ngFor="let emp of employee" class="detailoftab">
+          <td>{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.gender}}</td>
+          <td>
+            <img [src]="emp.profilePic" alt="">
+          </td>
+          <td>
+            <div class="department-label">
+                {{emp.department}}
+            </div>
+          </td>
+          <td>{{emp.salary}}</td>
+          <td>{{emp.startdate}}</td>
+          <td>{{emp.note}}</td>
+          <td>
+            <img src="../assets/edit.svg" (click)="updateById(emp.id)" />
+          </td>
+          <td>
+            <img src="../assets/delete.svg" (click)="deleteById(emp.id)" />
+          </td>
+         </tr>
+        </table>
     </div>
 </div>

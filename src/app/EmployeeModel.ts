@@ -1,16 +1,17 @@
 export class EmployeeModel {
-
-    fName: String;
+    id:number;
+    name: String;
     gender: String;
     department: String;
     salary: number;
-    startDate: Date;
+    startdate: Date;
     note: String
     profilePic: String;
-constructor(fName: String, gender: String, startDate: Date,department: String,salary: number, note: String,profilePic: String){
-    this.fName=fName;
+constructor(id:number, name: String, gender: String, startdate: Date,department: String,salary: number, note: String,profilePic: String){
+    this.id=id;
+    this.name=name;
     this.gender=gender;
-    this.startDate=startDate;
+    this.startdate=startdate;
     this.department=department;
     this.salary=salary;
     this.note=note;

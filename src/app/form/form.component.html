@@ -1,11 +1,11 @@
 
 <div class="form-content">
-    <form class ="form" action ="#" (ngSubmit) = "onSubmit()">
+    <form class ="form" action ="#">
         <h3> Add Employee Details</h3>
         <div class="row-content">
-            <label class="lable-text" for="firstName"> fName</label>
-            <input type="text" class ="form-control" id = "firstName" pattern="^[A-Z]{1}[a-zA-Z\\s]{2,}$"
-                [(ngModel)] = "employee.fName" name = "firstName"/>
+            <label class="lable-text" for="name"> name</label>
+            <input type="text" class ="form-control" id = "name" pattern="^[A-Z]{1}[a-zA-Z\\s]{2,}$"
+                [(ngModel)] = "employee.name" name = "name"/>
         </div>
           
         <div class="row-content">
@@ -24,13 +24,13 @@
             <div class="profile-radio-content">
                 <label>
                     <input type="radio" id="profile1" name="profile"
-                        value="../assets/profile1.jpg" required [(ngModel)]="employee.profilePic">
-                    <img class="profile" id="image1" src="../assets/profile1.jpg">
+                        value="../assets/profile1.png" required [(ngModel)]="employee.profilePic">
+                    <img class="profile" id="image1" src="../assets/profile1.png">
                 </label>
                 <label>
                     <input type="radio" id="profile2" name="profile"
-                        value="../assets/profile2.jpg" required [(ngModel)]="employee.profilePic">
-                    <img class="profile" id="image2" src="../assets/profile2.jpg">
+                        value="../assets/profile2.png" required [(ngModel)]="employee.profilePic">
+                    <img class="profile" id="image2" src="../assets/profile2.png">
                 </label>
                 <label>
                     <input type="radio" id="profile3" name="profile"
@@ -62,8 +62,8 @@
         </div>
 
         <div class="row-content">
-            <label class="label text" for="StartDate">Start Date</label>
-            <input type="date" class="startDate" id="StartDate" name="date" [(ngModel)]="employee.startDate" required>
+            <label class="label text" for="Startdate">Startdate</label>
+            <input type="date" class="startdate" id="Startdate" name="date" [(ngModel)]="employee.startdate" required>
         </div>
         <div class="row-content">
             <label class="label text" for="notes">Notes</label><br>

@@ -106,7 +106,56 @@ th {
     opacity: 1;
     border: 0px solid #dddddd;
 }
-
+.dept-label {
+    background-color: #e9fea5;
+    border-radius: 40%;
+    width: fit-content;
+    padding: 1px 7px;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .form-group{
+    color: red;
+    margin-left: 150px;
+    margin-bottom: 10px;
+    width: 960px;
+    transition: width 0.4s ease-in-out;
+  }
+  tr:not(:first-child) {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  
+  td {
+    font: normal normal normal 14px/21px Roboto;
+    letter-spacing: 0px;
+    color: #3d3d3d;
+    opacity: 1;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: center;
+  }
+  
+  td:first-child {
+    display: flex;
+    align-items: center;
+  }
+  
+  td img:first-child {
+    margin-right: 10px;
+  }
+  
+  td img {
+    cursor: pointer;
+    padding-right: 30px;
+      
+  }
+  
 
 /* .dept-label {
     background-color: #e9fea5;

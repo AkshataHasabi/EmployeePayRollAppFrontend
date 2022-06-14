@@ -9,7 +9,9 @@ import { EmployeeService } from '../employee-service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  employee: EmployeeModel = new EmployeeModel("","",new Date,"",0,"","")
+  employee: EmployeeModel = new EmployeeModel(0,"","",new Date,"",0,"","")
+
+  id: any = this.route.snapshot.paramMap.get("id");
 
   constructor(private router:Router, private service:EmployeeService, private route:ActivatedRoute) { }
 
@@ -29,5 +31,11 @@ export class FormComponent implements OnInit {
   getVal(value: String) {
     console.log(value);
     this.employee.department = value.toString();
+  }
+  updateEmployeeData() {
+    this.service.updateEmployeeById(this.employee, this.id).subscribe ((data:any) => {
+      this.router.navigate(["dashboard"])
+    });
+    
   }
 }

@@ -7,19 +7,30 @@ import { EmployeeService } from '../employee-service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  employee: Object;
+  employee: any;
   
 
   constructor(private router:Router, private service:EmployeeService) { }
 
   ngOnInit(): void {
     //pass api
-    this.service.getAllEmployee().subscribe(data => {
-      this.employee = data;
-      console.log(this.employee);
+    this.service.getAllEmployee().subscribe((data:any) => {
+      this.employee = data.data;
     });
   }
   onAddUser(){
     this.router.navigate(["form"]);
   }
+  deleteById(id: number) {
+    console.log(id);  
+    this.service.deleteEmployeeById(id).subscribe((data)  =>{
+    this.ngOnInit();
+     this.router.navigate(["dashboard"]);
+    });
+  }
+  updateById(id: number){
+      this.router.navigate(['update',id])
+  }
 }
+
+
