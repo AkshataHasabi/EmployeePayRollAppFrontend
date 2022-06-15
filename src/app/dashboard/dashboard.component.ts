@@ -14,8 +14,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     //pass api
+    this.getAllEmployees();
+    // this.service.getAllEmployee().subscribe((data:any) => {
+    //   this.employee = data.data;
+    // });
+  }
+  private getAllEmployees(){
     this.service.getAllEmployee().subscribe((data:any) => {
-      this.employee = data.data;
+      this.employee = data;
     });
   }
   onAddUser(){

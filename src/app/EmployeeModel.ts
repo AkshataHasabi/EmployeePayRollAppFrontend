@@ -1,5 +1,5 @@
 export class EmployeeModel {
-    id:number;
+  //  id:number;
     name: String;
     gender: String;
     department: String;
@@ -7,8 +7,8 @@ export class EmployeeModel {
     startdate: Date;
     note: String
     profilePic: String;
-constructor(id:number, name: String, gender: String, startdate: Date,department: String,salary: number, note: String,profilePic: String){
-    this.id=id;
+constructor(name: String, gender: String, startdate: Date,department: String,salary: number, note: String,profilePic: String){
+   // this.id=id;
     this.name=name;
     this.gender=gender;
     this.startdate=startdate;

@@ -9,7 +9,7 @@ import { EmployeeService } from '../employee-service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  employee: EmployeeModel = new EmployeeModel(0,"","",new Date,"",0,"","")
+  employee: EmployeeModel = new EmployeeModel("","",new Date,"",0,"","")
 
   id: any = this.route.snapshot.paramMap.get("id");
 
