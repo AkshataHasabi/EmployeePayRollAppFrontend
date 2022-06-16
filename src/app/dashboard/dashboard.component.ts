@@ -8,7 +8,6 @@ import { EmployeeService } from '../employee-service';
 })
 export class DashboardComponent implements OnInit {
   employee: any;
-  
 
   constructor(private router:Router, private service:EmployeeService) { }
 
